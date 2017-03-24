@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-RUN apk add nghttp2 python openssl ca-certificates --update-cache && rm -rf /var/cache/apk/*
+RUN apk add --no-cache nghttp2 python openssl ca-certificates
 
 ENTRYPOINT ["nghttpx"]
 CMD ["--help"]
